@@ -284,11 +284,13 @@ a:focus {
   clear: both;
 }
 
+/*----有问题----------
 [class*="span"] {
   float: left;
   min-height: 1px;
   margin-left: 20px;
 }
+*/
 
 .container,
 .navbar-static-top .container,
@@ -298,53 +300,91 @@ a:focus {
 }
 
 .span12 {
+  float: left;
+  *min-height: 1px;
+	_display:inline;
+  margin-left: 20px;
   width: 940px;
 }
-
 .span11 {
+  float: left;
+  *min-height: 1px;
+	_display:inline;
+  margin-left: 20px;
   width: 860px;
 }
-
 .span10 {
+  float: left;
+  *min-height: 1px;
+	_display:inline;
+  margin-left: 20px;
   width: 780px;
 }
-
 .span9 {
+  float: left;
+  *min-height: 1px;
+	_display:inline;
+  margin-left: 20px;
   width: 700px;
 }
-
 .span8 {
+  float: left;
+  *min-height: 1px;
+	_display:inline;
+  margin-left: 20px;
   width: 620px;
 }
-
 .span7 {
+  float: left;
+  *min-height: 1px;
+	_display:inline;
+  margin-left: 20px;
   width: 540px;
 }
-
 .span6 {
+  float: left;
+  *min-height: 1px;
+	_display:inline;
+  margin-left: 20px;
   width: 460px;
 }
-
 .span5 {
+  float: left;
+  *min-height: 1px;
+	_display:inline;
+  margin-left: 20px;
   width: 380px;
 }
-
 .span4 {
+  float: left;
+  *min-height: 1px;
+	_display:inline;
+  margin-left: 20px;
   width: 300px;
 }
-
 .span3 {
+  float: left;
+  *min-height: 1px;
+	_display:inline;
+  margin-left: 20px;
   width: 220px;
 }
-
 .span2 {
+  float: left;
+  *min-height: 1px;
+	_display:inline;
+  margin-left: 20px;
   width: 140px;
 }
-
 .span1 {
+  float: left;
+  *min-height: 1px;
+	_display:inline;
+  margin-left: 20px;
   width: 60px;
 }
 
+/*--对offset持观望态度
 .offset12 {
   margin-left: 980px;
 }
@@ -393,6 +433,8 @@ a:focus {
   margin-left: 100px;
 }
 
+--*/
+
 .row-fluid {
   width: 100%;
   *zoom: 1;
@@ -421,70 +463,162 @@ a:focus {
           box-sizing: border-box;
 }
 
-.row-fluid [class*="span"]:first-child {
-  margin-left: 0;
-}
-
 .row-fluid .controls-row [class*="span"] + [class*="span"] {
   margin-left: 2.127659574468085%;
 }
 
 .row-fluid .span12 {
+  display: block;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 2.127659574468085%;
+  *margin-left: 2.074468085106383%;
   width: 100%;
   *width: 99.94680851063829%;
 }
-
 .row-fluid .span11 {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 2.127659574468085%;
+  *margin-left: 2.074468085106383%;
   width: 91.48936170212765%;
   *width: 91.43617021276594%;
 }
-
 .row-fluid .span10 {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 2.127659574468085%;
+  *margin-left: 2.074468085106383%;
   width: 82.97872340425532%;
   *width: 82.92553191489361%;
 }
-
 .row-fluid .span9 {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 2.127659574468085%;
+  *margin-left: 2.074468085106383%;
   width: 74.46808510638297%;
   *width: 74.41489361702126%;
 }
-
 .row-fluid .span8 {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 2.127659574468085%;
+  *margin-left: 2.074468085106383%;
   width: 65.95744680851064%;
   *width: 65.90425531914893%;
 }
-
 .row-fluid .span7 {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 2.127659574468085%;
+  *margin-left: 2.074468085106383%;
   width: 57.44680851063829%;
   *width: 57.39361702127659%;
 }
-
 .row-fluid .span6 {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 2.127659574468085%;
+  *margin-left: 2.074468085106383%;
   width: 48.93617021276595%;
   *width: 48.88297872340425%;
 }
-
 .row-fluid .span5 {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 2.127659574468085%;
+  *margin-left: 2.074468085106383%;
   width: 40.42553191489362%;
   *width: 40.37234042553192%;
 }
-
 .row-fluid .span4 {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 2.127659574468085%;
+  *margin-left: 2.074468085106383%;
   width: 31.914893617021278%;
   *width: 31.861702127659576%;
 }
-
 .row-fluid .span3 {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 2.127659574468085%;
+  *margin-left: 2.074468085106383%;
   width: 23.404255319148934%;
-  *width: 23.351063829787233%;
+  *width: 23.351063829787232%;
 }
-
 .row-fluid .span2 {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 2.127659574468085%;
+  *margin-left: 2.074468085106383%;
   width: 14.893617021276595%;
   *width: 14.840425531914894%;
 }
-
 .row-fluid .span1 {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 2.127659574468085%;
+  *margin-left: 2.074468085106383%;
   width: 6.382978723404255%;
   *width: 6.329787234042553%;
 }
@@ -609,19 +743,17 @@ a:focus {
   *margin-left: 8.404255319148938%;
 }
 
-[class*="span"].hide,
-.row-fluid [class*="span"].hide {
-  display: none;
+.row-fluid [class*="span"]:first-child {
+  margin-left: 0;
+}
+/*--利用js解决流式布局第一个span的margin问题--*/
+.row-fluid .span-first-child {
+  margin-left: 0;
 }
 
-[class*="span"].pull-right,
-.row-fluid [class*="span"].pull-right {
-  float: right;
-}
 
 .container {
-  margin-right: auto;
-  margin-left: auto;
+  margin:0 auto;
   *zoom: 1;
 }
 
@@ -1049,6 +1181,7 @@ legend {
   color: #333333;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
+	*margin-left: -7px;
 }
 
 legend small {
@@ -1077,6 +1210,21 @@ label {
   display: block;
   margin-bottom: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 select,
 textarea,
@@ -1344,7 +1492,7 @@ textarea,
 .controls-row [class*="span"] + [class*="span"] {
   margin-left: 20px;
 }
-
+/*-----------------------------------
 input.span12,
 textarea.span12,
 .uneditable-input.span12 {
@@ -1416,7 +1564,7 @@ textarea.span1,
 .uneditable-input.span1 {
   width: 46px;
 }
-
+*/
 .controls-row {
   *zoom: 1;
 }
