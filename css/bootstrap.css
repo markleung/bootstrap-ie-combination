@@ -2519,6 +2519,7 @@ table {
   -moz-border-radius-topright: 4px;
 }
 
+/*暂时不支持table-striped类表格*/
 .table-striped tbody > tr:nth-child(odd) > td,
 .table-striped tbody > tr:nth-child(odd) > th {
   background-color: #f9f9f9;
@@ -2529,13 +2530,9 @@ table {
   background-color: #f5f5f5;
 }
 
-table td[class*="span"],
-table th[class*="span"],
-.row-fluid table td[class*="span"],
-.row-fluid table th[class*="span"] {
-  display: table-cell;
-  float: none;
-  margin-left: 0;
+.table-hover tbody .tr-hover td,
+.table-hover tbody .tr-hover th {
+  background-color: #f5f5f5;
 }
 
 .table td.span1,
@@ -2622,35 +2619,29 @@ table th[class*="span"],
   margin-left: 0;
 }
 
-.table tbody tr.success > td {
+/*暂不支持复合表格*/
+.table tbody tr.success td {
   background-color: #dff0d8;
 }
-
-.table tbody tr.error > td {
+.table tbody tr.error td {
   background-color: #f2dede;
 }
-
-.table tbody tr.warning > td {
+.table tbody tr.warning td {
   background-color: #fcf8e3;
 }
-
-.table tbody tr.info > td {
+.table tbody tr.info td {
   background-color: #d9edf7;
 }
-
-.table-hover tbody tr.success:hover > td {
+.table-hover tbody tr.success:hover td {
   background-color: #d0e9c6;
 }
-
-.table-hover tbody tr.error:hover > td {
+.table-hover tbody tr.error:hover td {
   background-color: #ebcccc;
 }
-
-.table-hover tbody tr.warning:hover > td {
+.table-hover tbody tr.warning:hover td {
   background-color: #faf2cc;
 }
-
-.table-hover tbody tr.info:hover > td {
+.table-hover tbody tr.info:hover td {
   background-color: #c4e3f3;
 }
 
@@ -2668,7 +2659,26 @@ table th[class*="span"],
   background-repeat: no-repeat;
 }
 
+.icon-xxx {
+  line-height: 14px;
+  background-image: url("../img/glyphicons-halflings.png");
+  background-position: 14px 14px;
+  background-repeat: no-repeat;
+  margin-top: 1px;
+  _display: inline;
+  _zoom: 1;
+  _width: 14px;
+  _height: 19px;
+	_margin-right: .3em;
+  _vertical-align: middle;
+ 
+}
+
 /* White icons with optional class, or on hover/focus/active states of certain elements */
+
+.icon-white {
+  background-image: url("../img/glyphicons-halflings-white.png");
+}
 
 .icon-white,
 .nav-pills > .active > a > [class^="icon-"],
@@ -3256,6 +3266,10 @@ table th[class*="span"],
 .dropup,
 .dropdown {
   position: relative;
+  /* fix for IE6 BFC */
+
+  display: inline;
+  *zoom: 1;
 }
 
 .dropdown-toggle {
@@ -3264,18 +3278,25 @@ table th[class*="span"],
 
 .dropdown-toggle:active,
 .open .dropdown-toggle {
-  outline: 0;
+  outline: none;
 }
 
 .caret {
   display: inline-block;
+	 /* fix for IE6 inline-block */
+  *display: inline;
+  *zoom: 1;
   width: 0;
   height: 0;
+	*line-height: 0px;
   vertical-align: top;
   border-top: 4px solid #000000;
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
-  content: "";
+	border-bottom: 0px;
+	*border-color: #000000 #fffffe #fffffe #fffffe;
+	*filter: progid:DXImageTransform.Microsoft.Chroma(color=#fffffe);
+	
 }
 
 .dropdown .caret {
@@ -3291,6 +3312,9 @@ table th[class*="span"],
   display: none;
   float: left;
   min-width: 160px;
+	*width: auto !important;
+	*width: 160px;
+	*height: 1px;
   padding: 5px 0;
   margin: 2px 0 0;
   list-style: none;
@@ -3325,8 +3349,12 @@ table th[class*="span"],
   border-bottom: 1px solid #ffffff;
 }
 
-.dropdown-menu > li > a {
+/*--先支持两层菜单--*/
+
+.dropdown-menu li a {
   display: block;
+  /* fix for IE6 BFC */
+	*zoom:1;
   padding: 3px 20px;
   clear: both;
   font-weight: normal;
@@ -3335,12 +3363,22 @@ table th[class*="span"],
   white-space: nowrap;
 }
 
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus,
-.dropdown-submenu:hover > a,
-.dropdown-submenu:focus > a {
-  color: #ffffff;
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus,
+.open .dropdown-submenu-hover a{
   text-decoration: none;
+  color: #ffffff;
+  background-color: #0081c2;
+}
+
+.dropdown-submenu-hover .dropdown-menu a {
+	  color: #333333;
+    background:white;
+}
+
+.dropdown-submenu:hover > a {
+	text-decoration: none;
+  color: #ffffff;
   background-color: #0081c2;
   background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
@@ -3349,50 +3387,71 @@ table th[class*="span"],
   background-image: linear-gradient(to bottom, #0088cc, #0077b3);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+
 }
 
-.dropdown-menu > .active > a,
-.dropdown-menu > .active > a:hover,
-.dropdown-menu > .active > a:focus {
-  color: #ffffff;
+/* fix for IE6 li:hover */
+.dropdown-submenu-hover * a {
+  *color: inherit;
+  *background-color: #fffffe;
+  *filter: none;
+  *filter: chroma(color=#fffffe);
+  *background-image: none;
+}
+
+.dropdown-menu .active a,
+.dropdown-menu .active a:hover {
+  color: #333333;
   text-decoration: none;
-  background-color: #0081c2;
-  background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
-  background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
-  background-image: -o-linear-gradient(top, #0088cc, #0077b3);
-  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
-  background-repeat: repeat-x;
   outline: 0;
+  background-color: #0081c2;
+  background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
+  background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
+  background-image: -o-linear-gradient(top, #0088cc, #0077b3);
+  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+  background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
 
-.dropdown-menu > .disabled > a,
-.dropdown-menu > .disabled > a:hover,
-.dropdown-menu > .disabled > a:focus {
+.dropdown-menu .disabled a,
+.dropdown-menu .disabled a:hover {
   color: #999999;
 }
 
-.dropdown-menu > .disabled > a:hover,
-.dropdown-menu > .disabled > a:focus {
+.dropdown-menu .disabled a:hover {
   text-decoration: none;
-  cursor: default;
   background-color: transparent;
+  /* fix for ie6 transparent */
+
+  *background-color: #fffffe;
+  *filter: chroma(color=#fffffe);
   background-image: none;
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  cursor: default;
 }
 
 .open {
   *z-index: 1000;
 }
 
-.open > .dropdown-menu {
+.open .dropdown-menu {
   display: block;
+  /* fix for IE6 inline-block */
+  *zoom: 1;
 }
 
-.pull-right > .dropdown-menu {
+.open .dropdown-submenu .dropdown-menu {
+	display:none;
+}
+
+.pull-right .dropdown-menu {
   right: 0;
   left: auto;
+}
+
+.pull-right * .dropdown-menu {
+  right: auto;
+  left: 0;
 }
 
 .dropup .caret,
@@ -3411,23 +3470,27 @@ table th[class*="span"],
 
 .dropdown-submenu {
   position: relative;
+  /* fix for IE6 absolute element will expand parent element's height */
+  *display: inline;
+  *zoom: 1;
 }
 
-.dropdown-submenu > .dropdown-menu {
+.dropdown-submenu .dropdown-menu {
   top: 0;
   left: 100%;
   margin-top: -6px;
   margin-left: -1px;
   -webkit-border-radius: 0 6px 6px 6px;
-     -moz-border-radius: 0 6px 6px 6px;
-          border-radius: 0 6px 6px 6px;
+  -moz-border-radius: 0 6px 6px 6px;
+  border-radius: 0 6px 6px 6px;
 }
 
-.dropdown-submenu:hover > .dropdown-menu {
+.open .dropdown-submenu:hover .dropdown-menu,
+.open .dropdown-submenu-hover .dropdown-menu {
   display: block;
 }
 
-.dropup .dropdown-submenu > .dropdown-menu {
+.dropup .dropdown-submenu .dropdown-menu {
   top: auto;
   bottom: 0;
   margin-top: 0;
@@ -3439,6 +3502,7 @@ table th[class*="span"],
 
 .dropdown-submenu > a:after {
   display: block;
+	*zoom:1;
   float: right;
   width: 0;
   height: 0;
@@ -3451,12 +3515,33 @@ table th[class*="span"],
   content: " ";
 }
 
-.dropdown-submenu:hover > a:after {
+.dropdown-submenu .dropdown-tri {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent #cccccc;
+  line-height: 0px;
+  _border-color: #fffffe #fffffe #fffffe #cccccc;
+  _filter: chroma(color=#fffffe);
+  display: block;
+  zoom: 1;
+  float: right;
+  margin: -1.3em 5px 0 0;
+}
+
+.dropdown-submenu:hover a:after,
+.dropdown-submenu-hover .dropdown-tri {
   border-left-color: #ffffff;
 }
 
 .dropdown-submenu.pull-left {
   float: none;
+}
+
+.dropdown-submenu-pull-left {
+  float: none;
+  /* fix for IE6 */
 }
 
 .dropdown-submenu.pull-left > .dropdown-menu {
@@ -3465,6 +3550,12 @@ table th[class*="span"],
   -webkit-border-radius: 6px 0 6px 6px;
      -moz-border-radius: 6px 0 6px 6px;
           border-radius: 6px 0 6px 6px;
+}
+
+.dropdown-submenu-pull-left .dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  *margin-left: 18px;
 }
 
 .dropdown .dropdown-menu .nav-header {
@@ -3566,6 +3657,20 @@ button.close {
   border: 0;
   -webkit-appearance: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .btn {
   display: inline-block;

@@ -3,7 +3,9 @@
 		<meta charset="utf-8" />  
 		<title> bootstrap-test </title>
 		<link href="css/bootstrap.css" rel="stylesheet" />
+		<!--		-->
 		<link href="css/bootstrap-ie6.css" rel="stylesheet" />
+
 		<link href="css/ie.css" rel="stylesheet" />
 		<link href="css/site.css" rel="stylesheet" />
 		<style>
@@ -133,9 +135,9 @@
 
 
 
-				<input class="span2" type="text" />
-				<input class="span4" type="text" />
-				<input class="span6" type="text" />
+				<input type="text" />
+				<input type="text" />
+				<input type="text" />
 			</fieldset>
     </form>
 
@@ -166,11 +168,99 @@
 		</div>
 
 
+		<div class="container">
+			 <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="span2">#</th>
+                  <th>First Name</th>
+                  <th class="span4">Last Name</th>
+                  <th>Username</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="success">
+                  <td>1</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
+		</div>
+
+		<div class="container">
+			<div class="dropup">
+					<button class="btn dropdown-toggle" data-toggle="dropdown">aaaaaaa</button>
+					<!-- Link or button to toggle dropdown -->
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+						<li><a tabindex="-1" href="#">Action</a></li>
+						<li><a tabindex="-1" href="#">Anotheraction</a></li>
+						<li><a tabindex="-1" href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a tabindex="-1" href="#">Separated link</a></li>
+					</ul>
+				</div>
+			<div class="btn-group">
+                <button class="btn dropdown-toggle" data-toggle="dropdown">Large button <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /btn-group -->
+							<p>hr</p>
+			<div class="dropdown">
+					<button class="btn dropdown-toggle" data-toggle="dropdown">Large button <span class="caret"></span></button>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+							<li><a tabindex="-1" href="#">Action</a></li>
+							<li><a tabindex="-1" href="#">Another action</a></li>
+							<li><a tabindex="-1" href="#">Something else here</a></li>
+							<li class="divider"></li>
+							<li class="dropdown-submenu">
+								<a tabindex="-1" href="#">More options</a>
+								<ul class="dropdown-menu">
+									<li><a tabindex="-1" href="#">Second level link</a></li>
+									<li><a tabindex="-1" href="#">Second level link</a></li>
+									<li><a tabindex="-1" href="#">Second level link</a></li>
+									<li><a tabindex="-1" href="#">Second level link</a></li>
+									<li><a tabindex="-1" href="#">Second level link</a></li>
+								</ul>
+							</li>
+						</ul>
+			</div>
+			<p><i class="icon-search"></i></p>
+			<p><i class="icon-search"></i></p>
+			<p><i class="icon-search"></i></p>
+			<p><i class="icon-search"></i></p>
+			<p><i class="icon-search"></i></p>
+			<p><i class="icon-search"></i></p>
+			<p><i class="icon-search"></i></p>
+			<p><i class="icon-search"></i></p><u></u>
+				
+		</div>
+
+
 
 
 	<script src="js/jquery-1.7.2.min.js"></script>
 	<script src="js/bootstrap.js"></script>
-	<!---->
-	<script src="js/bootstrap-ie.js"></script>
+	<!--[if lte IE 6]>
+		<script src="js/bootstrap-ie.js"></script>
+  <![endif]-->
 	</body>
 </html>
